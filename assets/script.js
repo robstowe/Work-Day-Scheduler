@@ -1,14 +1,22 @@
 var currentDay = $("#currentDay");
 var currentTime = $("#currentTime");
-var pastEl = $("#row time-block past");
-let presentEl = $("#row time-block present");;
-let futureEl = $("#row time-block future");;
+
 var isPresent = dayjs().format("H");
 var saveBtn = $("#save").text();
 // currentTime.setAttribute('class', 'date');
-$(pastEl).attr("class", 'past');
-$(presentEl).attr('class', 'past');
-$(futureEl).attr('class', 'future');
+
+
+
+
+$(function() {
+    function updateTime() {
+        var isPresent = dayjs();
+        currentTime.text(isPresent.format("MMM D, YYYY h:mm:ss a"));
+    }
+    updateTime();
+    setInterval(updateTime, 1000)
+})
+
 
 var workHours = [
     (hour9El = $("#hour-9")),
@@ -21,18 +29,6 @@ var workHours = [
     (hour16El = $("#hour-16")),
     (hour17El = $("#hour-17")),
 ];
-
-$(function() {
-    function updateTime() {
-        var isPresent = dayjs();
-        currentTime.text(isPresent.format("MMM D, YYYY h:mm:ss a"));
-    }
-    updateTime();
-    setInterval(updateTime, 1000)
-})
-
-
-
 
 $(".saveBtn").on("click", function() {
     var timeBlockId = $(this).parent().attr("id");
