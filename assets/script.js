@@ -24,9 +24,9 @@ $(".saveBtn").on("click", function () {
 
 // function to loop through each time block, and adds classes to define past present and future
 $(".time-block").each(function () {
-    var timeBlock = $(this).attr("id");
-    var timeBlockHour = timeBlock.split("-")[1];
-
+    var timeBlock = $(this).attr("id"); //variable timeBlock circles back to the HTML, and checks for the timeblock class
+    var timeBlockHour = timeBlock.split("-")[1];//this splits the id into an array, and then only reads the numerical part of the ID, since its 1 in the array format (0,1,2,etc...)
+    //if else loop to read based on the time segments, and assign classes based on current time
     if (timeBlockHour < isPresent) {
         $(this).removeClass("present future").addClass("past");
     } else if (timeBlockHour === isPresent) {
@@ -37,7 +37,7 @@ $(".time-block").each(function () {
 });
 
 
-
+//function to save the text in the timeblocks
 $('.time-block').each(function () {
     var timeBlock = $(this).attr('id');
     var meetings = localStorage.getItem(timeBlock);
