@@ -36,8 +36,8 @@ $(".saveBtn").on("click", function() {
   
 // function to loop through each time block, and adds classes to define past present and future
 $(".time-block").each(function() {
-    var timeBlockId = $(this).attr("id");
-    var timeBlockHour = timeBlockId.split("-")[1];
+    var timeBlock = $(this).attr("id");
+    var timeBlockHour = timeBlock.split("-")[1];
     
     if (timeBlockHour < isPresent) {
         $(this).removeClass("present future").addClass("past");
