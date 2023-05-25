@@ -3,4 +3,6 @@
 ## Description
 
 ## Screenshot
-./Work-Day-Scheduler/assets/iamges/Capture.PNG
+./Work-Day-Scheduler/Capture.PNG
+
+## Deployed Link
