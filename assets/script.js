@@ -1,6 +1,5 @@
 var currentDay = $("#currentDay");
 var currentTime = $("#currentTime");
-
 var isPresent = dayjs().format("H");
 var saveBtn = $("#save").text();
 // currentTime.setAttribute('class', 'date');
